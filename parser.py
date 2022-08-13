@@ -14,22 +14,22 @@ def printLinks(url):
  page = ab.open(url)
  html = page.read()
  try:
- print '[+]================= Printing Links From Regex.====================='
- link_finder = re.compile('href="(.*?)"')
- links = link_finder.findall(html)
- for link in links:
- print link
+  print '[+]================= Printing Links From Regex.====================='
+  link_finder = re.compile('href="(.*?)"')
+  links = link_finder.findall(html)
+  for link in links:
+  print link
  except:
- pass
+  pass
  try:
- print '\n[+]================ Printing Links From BeautifulSoup.================'
- soup = BeautifulSoup(html)
- links = soup.findAll(name='a')
- for link in links:
- if link.has_key('href'):
- print link['href']
+  print '\n[+]================ Printing Links From BeautifulSoup.================'
+  soup = BeautifulSoup(html)
+  links = soup.findAll(name='a')
+  for link in links:
+  if link.has_key('href'):
+  print link['href']
  except:
- pass
+  pass
 
 def main():
  parser = optparse.OptionParser('usage%prog ' +\
@@ -39,9 +39,9 @@ def main():
  (options, args) = parser.parse_args()
  url = options.tgtURL
  if url == None:
- print parser.usage
- exit(0)
+  print parser.usage
+  exit(0)
  else:
- printLinks(url)
+  printLinks(url)
 if __name__ == '__main__':
  main()
