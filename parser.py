@@ -14,7 +14,7 @@ def printLinks(url):
  page = ab.open(url)
  html = page.read()
  try:
-  print '[+]================= Printing Links From Regex.====================='
+  print('[+]================= Printing Links From Regex.=====================')
   link_finder = re.compile('href="(.*?)"')
   links = link_finder.findall(html)
   for link in links:
@@ -22,12 +22,12 @@ def printLinks(url):
  except:
   pass
  try:
-  print '\n[+]================ Printing Links From BeautifulSoup.================'
+  print('\n[+]================ Printing Links From BeautifulSoup.================')
   soup = BeautifulSoup(html)
   links = soup.findAll(name='a')
   for link in links:
   if link.has_key('href'):
-  print link['href']
+   print(link['href'])
  except:
   pass
 
