@@ -1,0 +1,6 @@
+# Requirements #
+mechanize
+cookiejar
+optparse-pretty
+urllib3
+beautifulsoup4

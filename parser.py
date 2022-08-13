@@ -1,5 +1,8 @@
+import subprocess, sys
+subprocess.call([sys.executable, "-m", "pip", "-q", "install", "-r", "requirements.txt" ])
+#2>/dev/null
 from anonBrowser import *
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 import os
 import optparse
 import re
@@ -18,7 +21,7 @@ def printLinks(url):
   link_finder = re.compile('href="(.*?)"')
   links = link_finder.findall(html)
   for link in links:
-  print link
+   print(link)
  except:
   pass
  try:
@@ -26,8 +29,8 @@ def printLinks(url):
   soup = BeautifulSoup(html)
   links = soup.findAll(name='a')
   for link in links:
-  if link.has_key('href'):
-   print(link['href'])
+   if link.has_key('href'):
+    print(link['href'])
  except:
   pass
 
@@ -39,7 +42,7 @@ def main():
  (options, args) = parser.parse_args()
  url = options.tgtURL
  if url == None:
-  print parser.usage
+  print(parser.usage)
   exit(0)
  else:
   printLinks(url)

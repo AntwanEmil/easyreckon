@@ -1,0 +1,6 @@
+## Obsidian files
+.Obsidian*
+
+## pycache files
+__pycache__*
+*.pyc
